@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+@layer tailwind-base, primevue, tailwind-utilities;
+
+@layer tailwind-base {
+    @tailwind base;
+}
+
+@layer tailwind-utilities {
+    @tailwind components;
+    @tailwind utilities;
+}
+
+
+* {
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+table.table {
+    @apply w-full bg-white rounded whitespace-nowrap border-collapse cursor-context-menu
+}
+
+table.table thead {
+    @apply text-left sticky top-0 bg-[--primary-200]
+}
+
+
+table.table tbody tr {
+    @apply even:bg-[--surface-100]  hover:bg-[--primary-100]
+}
+
+table.table th, table.table tbody td {
+    @apply py-2 px-4
+}
+
+table.table.sm {
+    @apply text-sm
+}
+
+table.table.xs {
+    @apply text-xs
+}
+
+.v-password {
+    @apply border-[1.5px] border-[--surface-300] hover:border-[--surface-400] focus:border-[--primary-color] focus:shadow-none shadow-sm rounded-[--border-radius] outline-none transition-[border] p-2 pr-10 w-full
+}
+
+
+
+table.table-edit {
+    @apply w-full bg-white rounded whitespace-nowrap border-collapse cursor-context-menu
+}
+
+table.table-edit thead {
+    @apply text-left sticky top-0 bg-[--primary-200]
+}
+
+
+table.table-edit tbody tr {
+    @apply hover:bg-[--surface-100]
+}
+
+table.table-edit th, table.table-edit tbody td {
+    @apply py-2 px-1
+}
+
+table.table-edit.sm {
+    @apply text-sm
+}
+
+table.table-edit.xs {
+    @apply text-xs
+}
+
+table.my-table {
+    @apply w-full bg-white whitespace-nowrap lg:whitespace-normal rounded border-collapse cursor-context-menu
+}
+
+table.my-table thead {
+    @apply text-left sticky z-20 top-0 bg-[--primary-200]
+}
+
+
+table.my-table tbody tr {
+    @apply even:bg-[--surface-50]
+}
+
+table.my-table th, table.my-table tbody td {
+    @apply py-2 px-4
+}
+
+
+input[type="number"] {
+    /* Firefox */
+    -moz-appearance: textfield;
+}
+
+/* Remove the spinner arrows in WebKit browsers (Chrome, Safari) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Remove the spinner arrows in Internet Explorer */
+input[type="number"] {
+    -ms-inner-background: #fff;
+    /* Remove arrows in IE10+ */
+    appearance: textfield;
+    /* Remove arrows in IE10+ */
+}
+
+.table-bordered th, .table-bordered td {
+    border: 1px solid black;
+}
