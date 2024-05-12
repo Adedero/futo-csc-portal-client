@@ -1,29 +1,20 @@
-# vue-project
+# FUTO Computer Science Department Portal - Client-side
 
-This template should help get you started developing with Vue 3 in Vite.
+This is the client side/frontend of the FUTO Computer Science Department portal for managing results, staff and student profiles, and automating the process flow of academic activities in the department.
 
-## Recommended IDE Setup
+## Getting Started
+Open the project directory in any terminal.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+### Install dependencies
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Open development server
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+The frontend server is now up and running.
