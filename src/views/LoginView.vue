@@ -87,7 +87,7 @@ async function login() {
 </script>
 
 <template>
-    <main class="min-h-dvh py-10">
+    <main class="min-h-dvh py-10 bg-slate-300">
         <Toast class="w-[70dvw] md:w-[30rem]" />
         <header>
             <LogoItem />
