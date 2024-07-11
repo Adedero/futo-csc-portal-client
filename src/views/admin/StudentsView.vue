@@ -150,15 +150,6 @@ async function getStudents(max, omit) {
         })
         const data = await response.json()
         errorLoadingStudents.value = false
-        /* data.sort((a, b) => {
-            // Compare by year first
-            if (a.classId.currentLevel !== b.classId.currentLevel) {
-                return a.classId.currentLevel - b.classId.currentLevel;
-            }
-
-            // If currentLevels are equal, compare by name
-            return a.name.localeCompare(b.name);
-        }); */
         return data
     } catch (error) {
         console.error(error);
@@ -170,13 +161,7 @@ async function getStudents(max, omit) {
 
 async function getMoreStudents() {
     const additionalStudents = await getStudents(20, students.value.length)
-    students.value.push(...additionalStudents)
-    /* students.value.sort((a, b) => {
-        if (a.classId.currentLevel !== b.classId.currentLevel) {
-            return a.classId.currentLevel - b.classId.currentLevel;
-        }
-        return a.name.localeCompare(b.name);
-    }) */
+    students.value = [...students.value, ...additionalStudents]
 }
 
 async function searchStudents() {
@@ -198,14 +183,13 @@ async function searchStudents() {
 
 }
 
-
-useInfiniteScroll(
-    listEl,
-    async () => {
-        await getMoreStudents();
-    },
-    { distance: 10 }
-);
+const handleScroll = (event) => {
+    const container = event.target;
+    const { scrollHeight, scrollTop, clientHeight } = container;
+    if (scrollTop + clientHeight >= scrollHeight - 20) {
+        getMoreStudents();
+    }
+}
 
 function pageReload() {
     window.location.reload()
@@ -405,7 +389,7 @@ const passwordIcon = computed(() => {
                             </InputGroup>
                         </div>
 
-                        <div ref="listEl" class="overflow-y-auto overflow-x-hidden"
+                        <div @scroll="handleScroll" class="overflow-y-auto overflow-x-hidden"
                             style="height: calc(100dvh - 15.2rem)">
                             <div v-if="!studentsLoading" class="list">
                                 <Panel v-for="student in students" :key="student._id" class="cursor-context-menu">
