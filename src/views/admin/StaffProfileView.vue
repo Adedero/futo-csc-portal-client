@@ -71,7 +71,7 @@ async function changeStaffCourse() {
     changeCourseLoading.value = true
 
     try {
-        const res = await fetch(`${ import.meta.env.VITE_API }/admin/staff/course-change${ route.params.id }`, {
+        const res = await fetch(`${import.meta.env.VITE_API }/admin/staff/course-change/${ route.params.id }`, {
             method: 'PUT',
             credentials: 'include',
             headers: {

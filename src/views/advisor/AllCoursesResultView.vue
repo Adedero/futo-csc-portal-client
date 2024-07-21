@@ -126,8 +126,9 @@ function print() {
                                 <td>{{ !record.previousGPA ? '' : formatGPA(record.previousGPA) }}</td>
                                 <td>{{ record.cumTGP ?? record.totalGradePoints }}</td>
                                 <td>{{ record.cumTNU ?? record.totalUnits }}</td>
-                                <td>{{ formatGPA(record.cumGPA) === NaN ? formatGPA(record.GPA) : formatGPA(record.cumGPA)
-                                    }}</td>
+                                <td>
+                                    {{ isNaN(formatGPA(record.cumGPA)) ? formatGPA(record.GPA) : formatGPA(record.cumGPA) }}
+                                    </td>
                                 <td>{{ getRemark(record.courses) }}</td>
                             </tr>
                         </tbody>

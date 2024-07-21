@@ -365,7 +365,7 @@ function sanitize(event) {
                                             class="outline-none w-full h-8  p-2 bg-transparent" type="text">
                                     </td>
                                     <td>
-                                        <Button @click=saveInput(student) label="Save" class="h-8" />
+                                        <Button @click="saveInput(student)" label="Save" class="h-8" />
                                     </td>
                                 </tr>
                             </tbody>
